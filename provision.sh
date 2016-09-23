@@ -8,6 +8,9 @@ echo "Setting perl:locale..."
 echo "Updating..."
 	apt-get update > /dev/null
 
+echo "Installing Vim..."
+	apt-get install vim > /dev/null
+
 echo "Installing htop..."
 	apt-get install htop -y > /dev/null
 
