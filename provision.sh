@@ -35,11 +35,11 @@ echo "Installing ipython2 & 3..."
 
 echo "Installing Docker..."
 	apt-get install apt-transport-https ca-certificates -y > /dev/null && \
-	apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D > /dev/null && \
-	echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" > /etc/apt/sources.list.d/docker.list \
-	&& apt-cache policy docker-engine > /dev/null && \
-	apt-get install linux-image-extra-$(uname -r) -y > /dev/null && apt-get install apparmor -y > /dev/null \
-	&& apt-get update > /dev/null && apt-get install docker-engine -y > /dev/null
+	apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && \
+	echo "deb https://apt.dockerproject.org/repo debian-jessie main" > /etc/apt/sources.list.d/docker.list \
+	apt-get update > /dev/null && \
+	apt-get install docker-engine -y > /dev/null && \
+	service docker start
 
 echo "Configuring docker..."
 	 groupadd docker && usermod -aG docker vagrant
