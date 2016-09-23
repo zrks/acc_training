@@ -1,0 +1,8 @@
+virtualenv
+python3
+uwsgi
+uwsgi-emperor
+uwsgi-plugin-python3
+nginx-full
+git
+
