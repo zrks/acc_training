@@ -9,7 +9,7 @@ echo "Updating..."
 	apt-get update > /dev/null
 
 echo "Installing Vim..."
-	apt-get install vim > /dev/null
+	apt-get install vim -y > /dev/null
 
 echo "Installing htop..."
 	apt-get install htop -y > /dev/null
