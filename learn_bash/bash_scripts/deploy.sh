@@ -9,6 +9,10 @@
 # Read about functions in bash - http://tldp.org/LDP/abs/html/functions.html
 
 
+# TODO Add varaibles to define:
+#+ 1) app install directory - /srv/helloapp
+#+ 2) nginx user and user group - www-data
+
 
 set_u_example() {
 #    set -u
@@ -53,8 +57,13 @@ array_example() {
     for i in "${array[@]}";
     do
         echo "$i"
+        # TODO Add install line.
     done
 }
+
+# TODO Add deploy function which will:
+#+ 1) execute: 'virtualenv -p /usr/bin/python3 $APP_INSTALL_DIRECTORY'
+#+ 2) change ownership of $APP_INSTALL_DIRECTORY to www-data user and group
 
 
 "$@"
