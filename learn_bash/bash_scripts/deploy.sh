@@ -83,7 +83,7 @@ deploy_app() {
 
     if [ ! -d "${APP_INSTALL_DIRECTORY}" ]; then
         echo "Creating virtualenv..."
-        virtualenv -p /usr/bin/python2.7 "${APP_INSTALL_DIRECTORY}"
+        virtualenv -p /usr/bin/python3 "${APP_INSTALL_DIRECTORY}"
     fi
 
     echo "Configuring app..."
