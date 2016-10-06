@@ -18,10 +18,13 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", path: "provision.sh"
 
-  # config.vm.provision "docker" do |d|
-  #   d.run "jenkins",
-  #     image: "jenkins:alpine",
-  #     args: "-p 8080:8080 --rm -v /home/vagrant/jenkins/:/var/jenkins_home/"
-  # end
+  config.vm.provision "shell",
+    inline: "mkdir /home/vagrant/jenkins && chown 1000 jenkins"
+
+  config.vm.provision "docker" do |d|
+    d.run "jenkins",
+      image: "jenkins:alpine",
+      args: "-p 8080:8080 -v /home/vagrant/jenkins/:/var/jenkins_home/"
+  end
 
 end
